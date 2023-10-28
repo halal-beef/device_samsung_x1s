@@ -22,12 +22,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, device/samsung/x1s/device.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common BananaDroid stuff.
+$(call inherit-product, vendor/banana/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := x1s
-PRODUCT_NAME := lineage_x1s
+PRODUCT_NAME := banana_x1s
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-G981B
 PRODUCT_MANUFACTURER := samsung
@@ -44,3 +44,10 @@ BUILD_FINGERPRINT := samsung/x1sxxx/x1s:11/RP1A.200720.012/G981BXXSCDUJ5:user/re
 # Define PDA property for camera
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.build.PDA=G981BXXSCDUJ5
+
+# BananaDroid
+BANANA_MAINTAINER := halal-beef
+TARGET_ENABLE_BLUR : = true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_BOOT_ANIMATION_RES := 1440
+
